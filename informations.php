@@ -6,11 +6,12 @@
 	</head>
 	<body>
 		<header>
-
+			<a href='./accueil.php'  class="bandeau">Revenir à l'accueil</a>
+			<link rel="stylesheet" href="./general.css" type="text/css"/>
 		</header>
 		
 		<div>
-			<table>
+			<table class="infos">
 				<tr>
 					<th>Version de l'API</th>
 					<td>??</td>
@@ -25,12 +26,9 @@
 				</tr>
 				<tr>
 					<th>Formats images supportés</th>
-					<td>??</td>
+					<td>JPEG, PNG</td>
 				</tr>
 			</table>
-
-			<br/>
-			<a href='./accueil.php'>Revenir à l'accueil</a>
 		</div>
 
 		<footer>

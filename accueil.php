@@ -3,31 +3,63 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Accueil</title>
+		<link rel="stylesheet" href="./general.css" type="text/css"/>
 	</head>
 	<body>
 		<header>
-
+			<a href='./../ProjetLaravel/public/' class="bandeau">Aller sur l'application</a>
+			<a href='./informations.php' class="bandeau">Configuration</a>
 		</header>
 
-		<div>
-
-			<label for="login"> Entrez votre login </label>
-			<input type="text" id="login" name="username"/>
-			<label for="size">Taille de l'image</label>
-			<select name="sizeAvatar" id="size">
-				<option value="size1"> Size 1</option>
-				<option value="size2"> Size 2</option>
-				<option value="size3"> Size 3</option>
-				<option value="size4"> Size 4</option>
-			</select>
-			<br/>
-			<a href='./informations.php'>Configuration</a>
-			<br/>
-			<a href='./../ProjetLaravel/public/'>Aller sur l'application</a>
+		<div class="titre">
+			<p> Bienvenue sur Gravatar </p>
 		</div>
+
+		<div>
+			<form action="" method="post">
+				<label for="email"> Entrez votre email </label>
+				<input type="text" id="email" name="adrEmail"/>
+				<label for="size" class="espace">Taille de l'image</label>
+				<select name="sizeAvatar" id="size">
+					<option value="size1"> Taille 1</option>
+					<option value="size2"> Taille 2</option>
+					<option value="size3"> Taille 3</option>
+					<option value="size4"> Taille 4</option>
+				</select>
+				<input type="submit" name="find" value="Chercher" class="submit" />
+			</form>
+		</div>
+
+		<div id="img-dispay" class="img-dispay">
+		</div>
+        <br/>
 
 		<footer>
 
 		</footer>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/jQuery/jquery-2.1.3.js"></script>
+		<script type="text/javascript">
+		$(function() 
+		{
+			$(".submit").click(function()
+			{
+				var demail = $("#email").val();
+				var dsize = $("#size").val();
+				var url = './../ProjetLaravel/public/search';
+    			$.post(url, 
+    			{
+    				email: demail, 
+    				size:dsize
+    			}, 
+    			function(data)
+    			{
+			        // Affiche le resultat //
+			        $('#img-dispay').html(data);
+			    }
+			}
+		}
+        </script>
 	</body>
 </html>
