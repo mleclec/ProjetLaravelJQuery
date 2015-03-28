@@ -24,7 +24,6 @@
 					<option value="size1"> Taille 1</option>
 					<option value="size2"> Taille 2</option>
 					<option value="size3"> Taille 3</option>
-					<option value="size4"> Taille 4</option>
 				</select>
 				<input type="submit" name="find" value="Chercher" class="submit" />
 			</form>
@@ -32,8 +31,6 @@
 
 		<div id="img-dispay" class="img-dispay">
 		</div>
-        <br/>
-
 		<footer>
 
 		</footer>
@@ -41,25 +38,31 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/jQuery/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
-		$(function() 
-		{
-			$(".submit").click(function()
+			$(document).ready(function() 
 			{
-				var demail = $("#email").val();
-				var dsize = $("#size").val();
-				var url = './../ProjetLaravel/public/search';
-    			$.post(url, 
-    			{
-    				email: demail, 
-    				size:dsize
-    			}, 
-    			function(data)
-    			{
-			        // Affiche le resultat //
-			        $('#img-dispay').html(data);
-			    }
-			}
-		}
+				$(".submit").click(function(event)
+				{
+					event.preventDefault(); // annule les événements par défauts
+
+					// Récupération des valeurs //
+					var demail = $("#email").val();
+					var dsize = $("#size").val();
+
+					// Envoie des valeurs //
+					var url = './../ProjetLaravel/public/search';
+	    			$.post(url, 
+			    			{
+			    				'email': demail, 
+			    				'size': dsize
+			    			}, 
+			    			function(data)
+			    			{
+						        // Affiche le resultat //
+						        $('#img-dispay').html(data);
+						    }
+						);
+				});
+			});
         </script>
 	</body>
 </html>
