@@ -8,7 +8,6 @@
 	<body>
 		<header>
 			<a href='./../ProjetLaravel/public/' class="bandeau">Aller sur l'application</a>
-			<a href='./informations.php' class="bandeau">Configuration</a>
 		</header>
 
 		<div class="titre">
@@ -21,9 +20,9 @@
 				<input type="text" id="email" name="adrEmail"/>
 				<label for="size" class="espace">Taille de l'image</label>
 				<select name="sizeAvatar" id="size">
-					<option value="size1"> Taille 1</option>
-					<option value="size2"> Taille 2</option>
-					<option value="size3"> Taille 3</option>
+					<option value="size1"> 100x100 </option>
+					<option value="size2"> 200x200 </option>
+					<option value="size3"> 300x300 </option>
 				</select>
 				<input type="submit" name="find" value="Chercher" class="submit" />
 			</form>
