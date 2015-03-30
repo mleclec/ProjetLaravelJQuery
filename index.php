@@ -30,8 +30,7 @@
 			</form>
 		</div>
 
-		<div id="img-dispay" class="img-dispay">
-		</div>
+		<div id="img-dispay" class="img-dispay"></div>
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/jQuery/jquery-2.1.3.js"></script>
